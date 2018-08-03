@@ -34,6 +34,32 @@ class Tree:
     
     def postOrder(self):
         pass
+N = 100005
+class node:
+    def __init__(self):
+        self.val = 0
+        self.left = 0
+        self.right = 0
+
+t = [node() for i in range(N)]
+
+root, cnt = 0, 0
+
+def insert(val, curNode):
+    if curNode == 0:
+        global cnt
+
+        return curNode
+
+    return curNode
+
+def preOrder(curNode, ans):
+    if curNode != 0:
+        pass
+
+def postOrder(curNode, ans):
+    if curNode != 0:
+        pass
   
 # 给定一个1到n的排列，依次插入到二叉树中，返回前序遍历和后序遍历
 # n：如题意
@@ -41,6 +67,18 @@ class Tree:
 # 返回值：将要输出的元素依次加入到返回值中
 def getAnswer(n, sequence):
     ''' 请在这里设计你的算法 ''' 
+    global root, cnt
+    root = cnt = 0
+
+    for i in range(len(sequence)):
+        root = insert(sequence[i], root)
+
+    ans = []
+    preOrder(root, ans)
+    postOrder(root, ans)
+
+    return ans
+
     tree = Tree.create(sequence)
     pre = tree.preOrder()
     post = tree.postOrder()
