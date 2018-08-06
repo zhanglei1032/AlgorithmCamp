@@ -16,7 +16,7 @@ def Hash(x):
 def check(op, x):
     ''' 请在这里设计你的算法 ''' 
     # 插入 
-    h = hash(x) 
+    h = Hash(x) 
     ptr = -1
     hlist = table[h]
     for i in range(len(hlist)):
