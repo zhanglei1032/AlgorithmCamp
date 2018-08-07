@@ -14,16 +14,24 @@ def getAnswer(n, A, DS):
 
     for i in range(n):
         id.append(i + 1)
-        sum.append()
+        sum.append(A[i] + DS[i])
 
     cnt = 0 
     for i in range(n):
-        for j in range(0,0,-1):
-            if'''''':
+        for j in range(n-1,0,-1):
+            # print(i+1,',j:',j)
+            if sum[j-1] < sum[j] :
                 id[j], id[j-1] = id[j-1], id[j]
                 sum[j], sum[j-1] = sum[j-1], sum[j]
                 A[j], A[j-1] = A[j-1], A[j]
                 DS[j], DS[j-1] = DS[j-1], DS[j]
+                cnt += 1  
+            elif sum[j-1] == sum[j] and A[j-1] < A[j]:   
+                id[j], id[j-1] = id[j-1], id[j]
+                sum[j], sum[j-1] = sum[j-1], sum[j]
+                A[j], A[j-1] = A[j-1], A[j]
+                DS[j], DS[j-1] = DS[j-1], DS[j]
+                cnt += 1   
 
     for i in range(n):
         ans.append(id[i])
