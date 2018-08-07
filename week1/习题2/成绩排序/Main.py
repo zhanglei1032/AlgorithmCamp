@@ -17,7 +17,6 @@ def getAnswer(n, A, DS):
         sum.append()
 
     cnt = 0 
-    for
     for i in range(n):
         for j in range(0,0,-1):
             if'''''':
